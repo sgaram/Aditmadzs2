@@ -12,23 +12,25 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 
-aditmadzs = LineClient("Extj9ml0WvCZJnTBgKQf.K9hUseF6j4f/WE5DLTHHBW.lQPQ16gRxj1JZooOj154iaqkX9nuhbJCCJFJ1bWnIrI=")
-aditmadzs("Auth Token : " + str(aditmadzs.authToken))
-channelToken = aditmadzs.getChannelResult()
-#aditmadzs.log("Channel Token : " + str(channelToken))
+#aditmadzs = LineClient()
+aditmadzs = LineClient(authToken='ExXbuDJlRmprtoagd5ca.LWU3BKMvJZ2EMa46JMRdAG.OGyMNUyABX6OYL6j/9i7zep+39fSVdd0QPTmGjLevxY=')
+aditmadzs.log("Auth Token : " + str(aditmadzs.authToken))
+channel = LineChannel(aditmadzs)
+aditmadzs.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient("Extj9ml0WvCZJnTBgKQf.K9hUseF6j4f/WE5DLTHHBW.lQPQ16gRxj1JZooOj154iaqkX9nuhbJCCJFJ1bWnIrI=")
-ki("Auth Token : " + str(ki.authToken))
-channelToken = ki.getChannelResult()
-#ki.log("Channel Token : " + str(channelToken))
+#ki = LineClient()
+ki = LineClient(authToken='ExXbuDJlRmprtoagd5ca.LWU3BKMvJZ2EMa46JMRdAG.OGyMNUyABX6OYL6j/9i7zep+39fSVdd0QPTmGjLevxY=')
+ki.log("Auth Token : " + str(ki.authToken))
+channel1 = LineChannel(ki)
+ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
 #ubah mid di dalem admin,owner,creator.json dengan mid kalian
 poll = LinePoll(aditmadzs)
 call = aditmadzs
-creator = ["u93d1ee4847fa27817ec1ee5d96d8616f"]
-owner = ["u93d1ee4847fa27817ec1ee5d96d8616f"]
-admin = ["u93d1ee4847fa27817ec1ee5d96d8616f"]
-staff = ["u93d1ee4847fa27817ec1ee5d96d8616f"]
+creator = ["u970bb76e49958f3d9e980e3a8e6ac36a"]
+owner = ["u970bb76e49958f3d9e980e3a8e6ac36a"]
+admin = ["u970bb76e49958f3d9e980e3a8e6ac36a"]
+staff = ["u970bb76e49958f3d9e980e3a8e6ac36a"]
 mid = aditmadzs.getProfile().mid
 Amid = ki.getProfile().mid
 KAC = [aditmadzs,ki]
@@ -359,7 +361,7 @@ def help():
                   "╠❂➣ " + key + "Respon\n" + \
                   "╠❂➣ " + key + "Speed/Sp\n" + \
                   "╠❂➣ " + key + "Sprespon\n" + \
-                  "╠❂➣ " + key + "Tag.\n" + \
+                  "╠❂➣ " + key + "Muach\n" + \
                   "╠❂➣ " + key + "Masuk1\n" + \
                   "╠❂➣ " + key + "Assist join\n" + \
                   "╠❂➣ " + key + "Ginfo\n" + \
@@ -1151,8 +1153,8 @@ def bot(op):
                    for mention in mentionees:
                         if mention ['M'] in Bots:
                            aditmadzs.sendMessage(msg.to, wait["Respontag"])
-                           aditmadzs.sendMessage(msg.to, None, contentMetadata={"STKID":"16411054","STKPKGID":"1429997","STKVER":"1"}, contentType=7)
-                           aditmadzs.sendMessage(msg.to, None, contentMetadata={"STKID":"3918700","STKPKGID":"1095566","STKVER":"1"}, contentType=7)
+                       #    aditmadzs.sendMessage(msg.to, None, contentMetadata={"STKID":"16411054","STKPKGID":"1429997","STKVER":"1"}, contentType=7)
+                           aditmadzs.sendMessage(msg.to, None, contentMetadata={"STKID":"51626516","STKPKGID":"11538","STKVER":"1"}, contentType=7)
                            break
                if 'MENTION' in msg.contentMetadata.keys() != None:
                  if wait["Mentiongift"] == True:
@@ -1470,7 +1472,7 @@ def bot(op):
                                 else: md+="┃┃☣ [⭕️] Protectinvite「OFF」\n"                                                
                                 aditmadzs.sendMessage(msg.to, md+"┃┣━━━━━━━━━━━━━━━━━━\n┃┃❧ Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\n┃┃❧ Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]\n  ┗━━━━━━━━━━━━━━━━━")
                                 
-                        elif cmd == "status sepri":
+                        elif cmd == "status ..sepri":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 tz = pytz.timezone("Asia/Jakarta")
@@ -1826,7 +1828,7 @@ def bot(op):
                                 ki.sendMessage(msg.to,"Nama diganti jadi " + string + "")
 
 #===========BOT UPDATE============#
-                        elif cmd == "tag." or text.lower() == '😆':
+                        elif cmd == "muach" or text.lower() == '😆':
                           if wait["selfbot"] == True:
                                group = aditmadzs.getGroup(msg.to)
                                nama = [contact.mid for contact in group.members]
@@ -2182,7 +2184,7 @@ def bot(op):
                                   tz = pytz.timezone("Asia/Jakarta")
                                   timeNow = datetime.now(tz=tz)
                                   aditmadzs.sendMessage(msg.to, "✯͜͡❂➣Cek sider diaktifkan\n\nTanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\nJam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
-                                  aditmadzs.sendMessage(msg.to, None, contentMetadata={"STKID":"11789035","STKPKGID":"1291001","STKVER":"1"}, contentType=7)
+                                  aditmadzs.sendMessage(msg.to, None, contentMetadata={"STKID":"51626508","STKPKGID":"11538","STKVER":"1"}, contentType=7)
                                   del cctv['point'][msg.to]
                                   del cctv['sidermem'][msg.to]
                                   del cctv['cyduk'][msg.to]
@@ -2200,7 +2202,7 @@ def bot(op):
                                   timeNow = datetime.now(tz=tz)
                                   cctv['cyduk'][msg.to]=False
                                   aditmadzs.sendMessage(msg.to, "✯͜͡❂➣Cek sider dinonaktifkan\n\nTanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\nJam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
-                                  aditmadzs.sendMessage(msg.to, None, contentMetadata={"STKID":"15439592","STKPKGID":"1398071","STKVER":"1"}, contentType=7)
+                                  aditmadzs.sendMessage(msg.to, None, contentMetadata={"STKID":"51626508","STKPKGID":"11538","STKVER":"1"}, contentType=7)
                               else:
                                   aditmadzs.sendMessage(msg.to, "Sudak tidak aktif")
 
